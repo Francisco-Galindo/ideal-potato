@@ -27,7 +27,7 @@ class Producto:
 
 class Bebida(Producto):
     """La clase Bebida hereda de la clase Producto, crea y define una nueva bebida, recibe:\n
-    nombre(str), precio(float), código(str), marca(str), fecha de caducidad(str) y volumen[ml](str)"""
+    nombre(str), precio(float), código(str), marca(str), fecha de caducidad(str) y volumen(str)"""
 
     def __init__(self:object, nombre:str="NombreProducto",
                  precio:float=0.0 , codigo:str="CodigoProducto" , 
@@ -40,7 +40,7 @@ class Bebida(Producto):
 
 class Botana(Producto):
     """La clase Botana hereda de la clase Producto, crea y define una nueva botana, recibe:\n
-    nombre(str), precio(float), código(str), marca(str), fecha de caducidad(str) y peso[g](str)"""
+    nombre(str), precio(float), código(str), marca(str), fecha de caducidad(str) y peso(str)"""
 
     def __init__(self:object, nombre:str="NombreProducto",
                  precio:float=0.0 , codigo:str="CodigoProducto" , 
