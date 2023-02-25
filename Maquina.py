@@ -1,5 +1,9 @@
 class Maquina():
 
+    """ Clase que representa la máquina expendedora, describe las interacciones
+    que una persona puede tener con la misma.
+    Recibe: dinero(float), password(str)"""
+
     def __init__(self, dinero, password):
         self.__pasword = password
         self.__dinero = dinero
@@ -8,6 +12,8 @@ class Maquina():
 
         self.__currPago = 0
         self.__total = 0
+
+        self.__listaProductos = []
 
         self.inventario = None
         self.seleccion = None
@@ -40,7 +46,7 @@ class Maquina():
     def darProductos(self):
         # TODO: Obtener producto del inventario conforme a pila de productos
         while True:
-            codigo = self.__listaProductosPop()
+            codigo = self.__listaProductos.pop()
             if codigo:
                 producto = self.inventario.obtenerProducto(codigo)
                 if producto:
@@ -67,7 +73,7 @@ class Maquina():
         self.__total = 0
         for codigo in codigos:
             self.__total += self.inventario.buscarProducto().getPrecio()
-            self.__listaProductosPush(codigo)
+            self.__listaProductos.append(codigo)
 
         self.recibirPago()
         if self.currPago >= self.__total:
