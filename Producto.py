@@ -36,6 +36,9 @@ class Bebida(Producto):
         super().__init__(nombre,precio,codigo,marca,fechacad)
         self.volumen=volumen
 
+    def __str__(self) -> str:
+        return str(self.nombre)
+
 
 
 class Botana(Producto):
@@ -48,3 +51,6 @@ class Botana(Producto):
                  peso:str="000g")->object:
         super().__init__(nombre,precio,codigo,marca,fechacad)
         self.peso=peso
+
+    def __str__(self) -> str:
+        return str(self.nombre)
