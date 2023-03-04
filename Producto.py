@@ -12,16 +12,23 @@ class Producto:
         self.marca=marca
         self.fechacad=fechacad
         
-    def set_codigo(self,nuevocodigo):
+    def set_codigo(self:object,nuevocodigo:str):
+        """Cambia el codigo del producto a una cadena de texto ingresada por el usuario"""
         self.codigo=nuevocodigo
         print("Se cambió el código a: ",self.codigo)
 
-    def set_precio(self,nuevoprecio):
+    def set_precio(self:object,nuevoprecio:float):
+        """Cambia el precio del producto a un valor float ingresado por el usuario"""
         print(f"Precio anterior={self._precio}, Nuevo precio={nuevoprecio}")
         self._precio=nuevoprecio
 
-    def get_precio(self)->float:
+    def get_precio(self:object)->float:
+        """"Recibe un objeto y regresa su precio"""
         return self._precio
+    
+    def __str__(self:object) -> str:
+        """Recibe un objeto y regresa su nombre"""
+        return str(self.nombre)
 
 
 
@@ -37,6 +44,7 @@ class Bebida(Producto):
         self.volumen=volumen
 
     def __str__(self) -> str:
+        """Recibe un objeto y regresa su nombre"""
         return str(self.nombre)
 
 
@@ -53,4 +61,5 @@ class Botana(Producto):
         self.peso=peso
 
     def __str__(self) -> str:
+        """Recibe un objeto y regresa su nombre"""
         return str(self.nombre)

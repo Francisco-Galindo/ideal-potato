@@ -1,7 +1,8 @@
 from Producto import *
 
 def Carga_csv(nombre_archivo:str)->list:
-    """Recibe el nombre del archivo a cargar como cadena de texto"""
+    """Recibe el nombre del archivo a cargar como cadena de texto y regresa una lista de productos"""
+
     productos=[]
     with open(nombre_archivo,"r") as f:
         archivo=f.readlines()
@@ -15,8 +16,3 @@ def Carga_csv(nombre_archivo:str)->list:
                 # nombre(str), precio(float), código(str), marca(str) y fecha de caducidad(str) y y volumen(str)
 
         return productos
-
-#TODO INTEGRAR A LA FUNCION "imprimirTicket" DE Maquina.py
-def Ticket():
-    """PlaceHolder"""
-    pass
