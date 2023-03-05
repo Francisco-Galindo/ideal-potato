@@ -1,11 +1,29 @@
+import csv
+from Producto import *
 class Inventario:
-
 
 
     def __init__(self):
         self.ListaProducto=[]
         self.ListaHistorial=[]
         self.CantidadProducto=[]
+
+    def Carga_csv()->list:
+        """Carga un archivo "Producto.csv" y regresa una lista de productos.\n
+La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caducidad,Peso/Volumen,Cantidad"""
+
+        productos=[]
+        with open("Productos.csv","r") as f:
+            archivo=csv.DictReader(f)
+
+            for linea in archivo:
+                if linea["Tipo"]=="Bebida":
+                    productos.append(Bebida(linea["Nombre"],linea["Precio"],linea["Codigo"],linea["Marca"],
+                                            linea["Fecha_Caducidad"],linea["Peso/Volumen"],linea["Cantidad"]))
+                elif linea["Tipo"]=="Botana":
+                    productos.append(Botana(linea["Nombre"],linea["Precio"],linea["Codigo"],linea["Marca"],
+                                            linea["Fecha_Caducidad"],linea["Peso/Volumen"],linea["Cantidad"]))
+            return productos
 
     def Buscar(self): #codigo me ayuda a buscar el codigo del producto
         """

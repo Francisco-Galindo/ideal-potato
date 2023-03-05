@@ -38,6 +38,6 @@ def Imprimir_Ticket(codigos:list,pago:float,total:float):
         ft.write(f"Cambio= {pago-total}\n")
         ft.write("---------------------------------------------------")
 
-print("prueba, borrar esto")
-codigos=["A","B","C","D"]
-Imprimir_Ticket(codigos,120,80)
+# print("prueba, borrar esto")
+# codigos=["A","B","C","D"]
+# Imprimir_Ticket(codigos,120,80)

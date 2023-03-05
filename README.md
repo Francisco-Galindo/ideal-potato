@@ -42,7 +42,6 @@ Al iniciarse el programa carga una lista inicial de productos desde un archivo l
 	 - __ init __: Constructor, recibe como argumento:
 	 *nombre* (str), *precio* (float), *codigo* (str), *marca* (str), *caducidad* (str),  cantidad (int), peso(str).
 	 Crea una instancia de "Botana"
-	 - 
  - **Bebida**
  Hereda de la clase "Producto", describe las bebidas almacenadas en la maquina
  Atributos:
@@ -54,6 +53,25 @@ Al iniciarse el programa carga una lista inicial de productos desde un archivo l
 	 - __ init __: Constructor, recibe como argumento:
 	 *nombre* (str), *precio* (float), *codigo* (str), *marca* (str), *caducidad* (str),  cantidad (int), peso(str).
 	 Crea una instancia de "Bebida"
+
+#TODO llenar los campos de inventario y maquina
+
+ - **Inventario**
+ Descripción:
+ Atributos:
+	 - List item
+
+	Métodos:
+	 - Carga_csv: Carga la lista de productos desde un archivo csv ("Productos.csv") y regresa una lista de productos.
+
+ - **Maquina**
+ Descripción:
+ Atributos:
+	 - List item
+
+	Métodos:
+	 - Imprimir_Ticket: Crea un ticket de compra en formato txt <Ticket(Fecha).txt>. Recibe como argumento #TODO incluir argumentos
+	
 
 	
 	
