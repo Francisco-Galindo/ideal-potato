@@ -53,15 +53,17 @@ class Maquina():
 
         cambio = self.__currPago - self.__total
 
-        if cambio > 0:
-            print(f"Su cambio es de ${cambio}")
 
         if cambio > self.__dinero:
             print("¡La máquina no tiene suficiente dinero para dar cambio!")
             print(f"Te devolvemos tus ${self.__currPago}")
             return False
 
+        if cambio > 0:
+            print(f"Su cambio es de ${cambio}")
+
         self.__dinero -= cambio
+        self.__dinero += self.__currPago - cambio
 
         return True
 
@@ -89,7 +91,7 @@ class Maquina():
 
     def hacerTransaccion(self):
         # TODO Leer opciones
-        line = input("Ingrese la lista de productos a comprar (separado por comas: A,B,C,...): ")
+        line = input("\nIngrese la lista de productos a comprar (separado por comas: A,B,C,...): ")
         codigos = line.split(',')
         # TODO Calcular total y agregar productos a la pila de productos
         self.__total = 0
@@ -108,7 +110,6 @@ class Maquina():
 
             if self.darCambio():
                 self.darProductos()
-                self.__dinero += self.__currPago
                 self.imprimirTicket()
 
             self.__currPago = 0
