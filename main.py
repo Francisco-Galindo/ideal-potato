@@ -1,22 +1,33 @@
 #!/bin/python
 
+from Maquina import *
+
+maquina = Maquina(1000, "123")
+
 print("Bienvenido!")
 
-print("""
-      +---+ +---+ +---+
-      |   | |   | |   |
-      | A | | B | | C |
-      |   | |   | |   |
-      +---+ +---+ +---+
-""")
+while True:
+    print("""
+          +---+ +---+ +---+ +---+ +---+ +---+
+          |   | |   | |   | |   | |   | |   |
+          | A | | B | | C | | D | | E | | F |
+          |   | |   | |   | |   | |   | |   |
+          +---+ +---+ +---+ +---+ +---+ +---+
+    """)
 
-input("Introduzca su dinero: ")
-input("Elija el producto: ")
+    print("Acciones a realizar")
+    print("1. Comprar productos")
+    print("2. Ingreso de mantenimiento")
+    print("3. Salir")
 
-print("Trabajando...")
+    opcion = input("¿Qué quieres hacer?: ").strip()
 
-print("Aquí esta su producto!")
+    if opcion == '1':
+        maquina.hacerTransaccion()
+        input("\nPresione enter para continuar")
+    elif  opcion == '2':
+        print("Mantenimiento")
+    elif opcion == '3':
+        break
 
-print("Su cambio es...")
-
-print("Adiós!")
+print("\nAdiós!")
