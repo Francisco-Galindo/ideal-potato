@@ -1,4 +1,5 @@
 from Producto import *
+from Inventario import *
 
 class Maquina():
 
@@ -6,6 +7,13 @@ class Maquina():
     que una persona puede tener con la misma.
     Recibe: dinero(float), password(str)"""
 
+
+    """
+    Constructor de la clase Maquina
+
+    :param dinero: La cantidad de dinero que tiene la máquina al inicio
+    :param password: La contraseña para entrar como persona de mantenimiento
+    """
     def __init__(self, dinero, password):
         self.__pasword = password
         self.__dinero = dinero
@@ -17,7 +25,7 @@ class Maquina():
 
         self.__listaCodigos = []
 
-        self.inventario = None
+        self.inventario = Inventario()
         self.seleccion = None
         self.charola = None
 
@@ -48,12 +56,22 @@ class Maquina():
         if cambio > 0:
             print(f"Su cambio es de ${cambio}")
 
+        if cambio > self.__dinero:
+            print("¡La máquina no tiene suficiente dinero para dar cambio!")
+            print(f"Te devolvemos tus ${self.__currPago}")
+            return False
+
+        self.__dinero -= cambio
+
+        return True
+
     def darProductos(self):
         # TODO: Obtener producto del inventario conforme a pila de productos
         while self.__listaCodigos:
             codigo = self.__listaCodigos.pop()
 
             # producto = self.inventario.obtenerProducto(codigo)
+            # print("AAA", producto)
             producto = codigo
             if producto:
                 print(f"Aquí está su {producto}")
@@ -74,24 +92,26 @@ class Maquina():
         line = input("Ingrese la lista de productos a comprar (separado por comas: A,B,C,...): ")
         codigos = line.split(',')
         # TODO Calcular total y agregar productos a la pila de productos
-        # Va a fallar eventualmente cuando se pidan más de un producto de los que hay
         self.__total = 0
         for codigo in codigos:
             codigo = codigo.strip()
+            # Falta validar que haya suficientes productos
             if codigo:
-                # self.__total += self.inventario.buscarProducto().getPrecio()
+                # totalito = self.inventario.BuscarProducto().getPrecio()
+                # print("AAA", totalito)
+
                 self.__total += 20
                 self.__listaCodigos.append(codigo)
 
         self.recibirPago()
         if self.__currPago >= self.__total:
 
-            self.darCambio()
+            if self.darCambio():
+                self.darProductos()
+                self.__dinero += self.__currPago
+                self.imprimirTicket()
 
-            # Entregar productos
-            self.darProductos()
-
-            self.imprimirTicket()
+            self.__currPago = 0
         else:
             print("No has pagado lo suficiente...")
 
