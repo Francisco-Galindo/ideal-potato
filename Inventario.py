@@ -1,4 +1,3 @@
-
 ListaProducto=[]
 ListaHistorial=[]
 CantidadProducto=[] 
@@ -7,6 +6,7 @@ Cantidad=[]
 def Buscar(Codigo): #codigo me ayuda a buscar el codigo del producto
     """
     It returns the length of the list
+
     
     :param Codigo: The code of the product
     :return: The length of the list.
@@ -15,7 +15,9 @@ def Buscar(Codigo): #codigo me ayuda a buscar el codigo del producto
     return Tamaño_Lista
  
 #Buscamos el nombre del producto a consultar basandonos en el codigo. 
-def BuscarNombre(Codigo):
+def BuscarNombre(Codigo): #esta cosa igual puede heredar de clase producto 
+    #crear un diccionario de claves y nombres y heredar solo la propiedad de 
+    # nombre
     """
     It searches for a product name based on a product code.
     
@@ -34,14 +36,16 @@ def BuscarNombre(Codigo):
     return Nombre
  
 #Extraemos todos los datos del producto a buscar
-def BuscarProducto(Codigo):
+def BuscarProducto(Codigo): #AQUI PUEDO PONER LA CLASE PRODUCTO DE LALO 1
     """
     It searches for a product in the list.
     
     :param Codigo: Product code
     :return: A list of the product's information.
     """
-    Producto = []
+    Producto = [] #De hecho puedo intentar colocar un diccionario. con 5 listas
+    #adentro que seria nombre, precio, codigo, marca, fecha de caducidad. 
+    ##Aqui puedo heredar la clase de lalo y añadirle opciones.
     for CantidadProducto in ListaProducto:
         if CantidadProducto[0] == Codigo:
             Producto.append(CantidadProducto[0])
@@ -49,16 +53,18 @@ def BuscarProducto(Codigo):
             Producto.append(CantidadProducto[2])
             Producto.append(CantidadProducto[3])
             Producto.append(CantidadProducto[4])
-    return Producto
+    return Producto #return diccionario.
  
 #Mostramos los datos del producto buscado
-def BuscarProducto2(Codigo):
+def BuscarProducto2(Codigo): #Aqui puedo heredar la clase de lalo y la 
+    #funcionalidad de nombre, costo y añadirle opciones como product disponible y
+    #costo total de lo que queda 2
     """
     If the first element of the list is equal to the code, then print the elements of the list.
     
     :param Codigo: The code of the product
     """
-    Producto = []
+    Producto = [] #igual lo mejor seria con un diccionario
     for Producto in ListaProducto:
         if Producto[0] == Codigo:
             print("Codigo: ",Producto[0])
@@ -77,8 +83,11 @@ def ActualizarSaldo(Codigo,TipoMovimiento,Cantidad,Total):
     :param Cantidad: Quantity
     :param Total: Total amount of the product
     """
-   
-    Producto=[]
+   #ESTA FUNCION BASICAMENTE ME HACE LA EL CALCULO/OPERACION DE METER Y SACAR CANTIDADES 
+   #DE PRODUCTOS CREO QUE SERIA BUENA IDEA QUE AQUI INCLUYA EL PROCESO DEL USUARIO
+   #TENDRIA QUE AGREGAR LA FUNCIONALIDAD DEF DAR PRODUCTO DE LA CLASE DE 
+   #FRANCISCO  O MEJOR DICHO QUE EL ACCEDA A REMOVER UN ELEMENTO DEL INVENTARIO.
+    Producto=[] 
     for CantidadProducto in ListaProducto:
         if CantidadProducto[0] == Codigo:
             ListaProducto.remove(CantidadProducto)
@@ -107,7 +116,9 @@ def ActualizarSaldo(Codigo,TipoMovimiento,Cantidad,Total):
  
 #Realizamos el Ingreso de Producto
 
-def Ingreso():
+def Ingreso():# DEL ALGUNA MANERA AQUI ES PARA AGREGRAR LOS ELEMENTOS AL
+    #DICCIONARIO Y DE ALGUNA MANERA PUES AQUI NO JUEGA EL USUARIO.
+    #SE GENERA UN DOCUMENTO PARA LAS ORDENES DE COMPRA
     """
     A function that allows you to enter the product code and description.
     """
@@ -148,7 +159,11 @@ def Ingreso():
     print('')
  
 #Realizamos el Egreso (Venta)
-def Egreso():
+def Egreso(): #DE ALGUNA MANERA EL OPERADOR RETIRA PRODUCTO CADUCO,
+    #ENTONCES UNA NUEVA FUNCION PARA LA FECHA DE EXPIRACION QUE EVALUE QUE PRODUCTOS
+    #ESTAN EXPIRADOS Y ASI RETIRARLOS AL MENOS AQUI TAMPOCO ENTRA EL USUARIO
+    #PERO SE TIENE QUE ACCEDER AL INVENTARIO QUE TOCA EL USUARIO.
+    #DOCUMENTO PARA LA FACTURA.
    # It's asking for the product code and then it's searching for the product in the list.
     Historial = []
     print('')
@@ -176,7 +191,9 @@ def Egreso():
     else:
         print("¡¡Producto No existe en la base de datos!!")
  
-#Mostramos el Historial de un Producto.
+#Mostramos el Historial de un Producto. QUE IMPRIMA LA HISTORIA DE UN
+#PRODUCTO DE ALGUNA MANERA PRINCIPALMENTE EL RETIRO Y EGRESO POR PARTE DEL
+#OPERADOR Y LOS USUARIOS Y HACERLO UN DOCUMENTO.
 def Historial():
     """
     It prints the history of a product.
@@ -206,7 +223,9 @@ while (1):
     print('****** Menú Principal ******')
     print('0. SALIR')
     print('1. INGRESO DE PRODUCTO')
-    print('2. EGRESO DE PRODUCTO')
+    print('2. EGRESO DE PRODUCTO') 
+    #PRODUCTOS COMPRADOS POR LOS USUARIOS
+    #PRODUCTOS CADUCACADOS
     print('3. HISTORIAL DE MOVIMIENTOS')
     print('4. BUSQUEDA DE PRODUCTO')
     opcion=input('Digitar una Opción: ')
