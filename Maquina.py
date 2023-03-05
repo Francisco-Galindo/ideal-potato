@@ -1,5 +1,6 @@
 from Producto import *
 from Inventario import *
+from datetime import datetime
 
 class Maquina():
 
@@ -24,10 +25,9 @@ class Maquina():
         self.__total = 0
 
         self.__listaCodigos = []
+        self.__infoTicket = []
 
         self.inventario = Inventario()
-        self.seleccion = None
-        self.charola = None
 
     def recibirPago(self):
         debePagar = True
@@ -77,13 +77,41 @@ class Maquina():
             producto = codigo
             if producto:
                 print(f"Aquí está su {producto}")
+
+                # TODO actualizar cuando esté lista la clase Inventario
+                self.__infoTicket.append({
+                    "codigo": producto,
+                    "precio": 20
+                })
+
             else:
                 print("No se pudo sacar el producto")
                 break
 
+    #TODO incluir los precios de los productos
     def imprimirTicket(self):
+        """Imprime el ticket de compra"""
+
         print("\nImprimiendo ticket...")
-        # TODO: Imprimir el ticket
+
+        fechahora=datetime.now().strftime("%d-%m-%y--%H;%M;%S")
+
+        with open(f"Ticket({fechahora}).txt","w") as ft:
+            ft.write("----------------Ticket de compra:----------------\n\n")
+
+            ft.write(f"Fecha de compra: {fechahora}\n\n")
+            ft.write("CODIGO:\t PRECIO:\n")
+
+            for i in self.__infoTicket:
+                ft.write(f"{i['codigo']}\t {i['precio']}\n")
+
+            ft.write(f"\nTotal\t${self.__total}\n")
+            ft.write(f"Pago\t${self.__currPago}\n")
+            ft.write(f"Cambio\t${self.__currPago - self.__total}\n")
+
+            ft.write("---------------------------------------------------")
+
+        self.__infoTicket = []
 
     # TODO
     def guardarEnHistorial(self):
@@ -121,6 +149,9 @@ class Maquina():
             self.__sesionIniciada = True
         else:
             self.__sesionIniciada = False
+
+    def salir(self):
+        self.__sesionIniciada = False
 
     def cambiarContra(self, passwd):
         if self.__sesionIniciada:
