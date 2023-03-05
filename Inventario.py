@@ -1,55 +1,34 @@
 class Inventario:
 
-    ListaProducto=[]
-    ListaHistorial=[]
-    CantidadProducto=[] 
-    Cantidad=[] 
 
 
     def __init__(self):
-
-      
-        self.codigo = None
-        self.Tamaño_Lista = None
-        self.nombre = None
-        self.Producto = None 
-        self.Historial = None
-        self.Nombre = None
-        self.Precio = None
-        self.Cantidad = None
-        self.CantidadTotal = None
-        self.TotalM = None
-        self.TipoMovimiento = None
-        self.Costo = None
-        self.Orden = None
-        self.Ingreso = None
-        self.ActualizarSaldo = None
-        self.Cantidad1 = None
-        self.Inventario = None
-        
+        self.ListaProducto=[]
+        self.ListaHistorial=[]
+        self.CantidadProducto=[]
 
     def Buscar(self): #codigo me ayuda a buscar el codigo del producto
         """
         It returns the length of the list
-        
+
         :param Codigo: The code of the product
         :return: The length of the list.
         """
-        Tamaño_Lista = len(ListaProducto) #me retorna la longitud de la lista.
+        Tamaño_Lista = len(self.ListaProducto) #me retorna la longitud de la lista.
         return Tamaño_Lista
-    
+
     def BuscarNombre(self):
         """
         It searches for a product name based on a product code.
-        
+
         :param Codigo: The code of the product
         :return: The name of the product.
         """
-        Tamaño_Lista = len(ListaProducto)
+        Tamaño_Lista = len(self.ListaProducto)
         if Tamaño_Lista == 0:
             Nombre = ''
         else:
-            for CodeProducto in ListaProducto:
+            for CodeProducto in self.ListaProducto:
                 if CodeProducto[0] == Codigo:
                     Nombre = CodeProducto[1]
                 else:
@@ -59,12 +38,12 @@ class Inventario:
     def BuscarProducto(self):
         """
         It searches for a product in the list.
-        
+
         :param Codigo: Product code
         :return: A list of the product's information.
         """
         Producto = []
-        for CantidadProducto in ListaProducto:
+        for CantidadProducto in self.ListaProducto:
             if CantidadProducto[0] == Codigo:
                 Producto.append(CantidadProducto[0])
                 Producto.append(CantidadProducto[1])
@@ -76,11 +55,11 @@ class Inventario:
     def BuscarProducto2(self):
         """
         If the first element of the list is equal to the code, then print the elements of the list.
-        
+
         :param Codigo: The code of the product
         """
         Producto = []
-        for Producto in ListaProducto:
+        for Producto in self.ListaProducto:
             if Producto[0] == Codigo:
                 print("Codigo: ",Producto[0])
                 print("Nombre: ",Producto[1])
@@ -91,17 +70,17 @@ class Inventario:
     def ActualizarSaldo(self, Codigo, TipoMovimiento, Cantidad, Total):
         """
         It removes the product from the list, then adds it back with the updated values.
-        
+
         :param Codigo: Product code
         :param TipoMovimiento: It's a string that can be either "Ingreso" or "Salida"
         :param Cantidad: Quantity
         :param Total: Total amount of the product
         """
-    
+
         Producto=[]
-        for CantidadProducto in ListaProducto:
+        for CantidadProducto in self.ListaProducto:
             if CantidadProducto[0] == Codigo:
-                ListaProducto.remove(CantidadProducto)
+                self.ListaProducto.remove(CantidadProducto)
                 CantidadTotal = float(CantidadProducto[2])
                 TotalM = float(CantidadProducto[4])
                 if TipoMovimiento == 'Ingreso':
@@ -123,7 +102,7 @@ class Inventario:
                 Producto.append(CantidadTotal)
                 Producto.append(Costo)
                 Producto.append(TotalM)
-                ListaProducto.append(Producto)
+                self.ListaProducto.append(Producto)
 
     def Ingreso(self):
         """
@@ -151,7 +130,7 @@ class Inventario:
             CantidadProducto.append(Cantidad)
             CantidadProducto.append(Precio)
             CantidadProducto.append(Total)
-            ListaProducto.append(CantidadProducto)
+            self.ListaProducto.append(CantidadProducto)
     # It's adding the product to the list.
         else:
             ActualizarSaldo(Codigo, Ingreso, Cantidad, Total)
@@ -162,9 +141,9 @@ class Inventario:
         Historial.append(Precio)
         Historial.append(Total)
         Historial.append(Orden)
-        ListaHistorial.append(Historial)
+        self.ListaHistorial.append(Historial)
         print('')
-    
+
     def Egreso(self):
     # It's asking for the product code and then it's searching for the product in the list.
         Historial = []
@@ -187,7 +166,7 @@ class Inventario:
             Historial.append(Total)
             Historial.append(Orden)
             ActualizarSaldo(Codigo,'Egreso',Cantidad1,Total)
-            ListaHistorial.append(Historial)
+            self.ListaHistorial.append(Historial)
             print('')
 
     # It's printing a message if the product is not in the list.
@@ -209,11 +188,11 @@ class Inventario:
         if BuscarNombre(Codigo) =='':
             print("Código No Existente")
         else:
-            for Historial in ListaHistorial:
+            for Historial in self.ListaHistorial:
                 if Historial[1] == Codigo:
                     print(Historial[1],Historial[2],Historial[0],Historial[3],Historial[4],Historial[6],sep = "\t")
         print('')
-    
+
 def main():
 
     #self.Inventario = Inventario()
@@ -227,7 +206,7 @@ def main():
         print('3. HISTORIAL DE MOVIMIENTOS')
         print('4. BUSQUEDA DE PRODUCTO')
         opcion=input('Digitar una Opción: ')
-            
+
         if opcion =='0':
             print("Gracias por usar nuestro servicio. ¡Hasta luego!")
             break
