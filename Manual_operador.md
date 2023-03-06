@@ -15,31 +15,32 @@ Sin embargo, el operador puede ingresar por medio del software el peso y volumen
 ## CARACTERÍSTICAS GENERALES:
 1. Panel de pulsadores y display.
 La pantalla inicial de la máquina debería visualizarse de la siguiente manera:
-~imagen~
+![image](https://user-images.githubusercontent.com/125548315/223023417-7fcb53a8-cf65-4581-934a-43595b8665fe.png)
+
 
 A continuación, procederemos a elegir la opción número 2 "Ingreso de mantenimiento" para entrar a la opción de mantenimiento.
 Posteriormente el operador ingresará la contraseña super secreta proporcionada en el centro de trabajo o por el fabricante del modelo en cuestión de la máquina.
 una vez se accede a la interfaz de mantenimiento se mostrará el siguiente menú:
-~imagen~
+[~imagen~](https://ibb.co/9gPv013)
 
 OPCIONES GENERALES.
 El operador tiene que elegir a una opción del menú digitando el digito correspondiente:
-0. Sale de la interfaz de mantenimiento.
-1. Programa el ingreso de productos para la máquina y la creación de su código correspondiente. El operador debe ingresar las características: Descripción, marca, fecha de caducidad, unidades a ingresar, precio unitario y orden de compra del producto.
-2. Programa el egreso de productos para la máquina. El operador debe ingresar el código del producto, las unidades a retirar y el número de factura.
-3. Historial de movimientos. El operador debe ingresar el código de un producto para generar su historial.
-4. Permite la búsqueda de un producto dentro del inventario mediante su código.
-5. Retira dinero de la máquina.
-6. Introduce dinero a la máquina.
+0. SALIR: Sale de la interfaz de mantenimiento.
+1. INGRESO DE PRODUCTO: Programa el ingreso de productos para la máquina y la creación de su código correspondiente. El operador debe ingresar las características: Descripción, marca, fecha de caducidad, unidades a ingresar, precio unitario y orden de compra del producto.
+2. EGRESO DE PRODUCTO: Programa el egreso de productos para la máquina. El operador debe ingresar el código del producto, las unidades a retirar y el número de factura.
+3. HISTORIAL DE MOVIMIENTOS: Historial de movimientos. El operador debe ingresar el código de un producto para generar su historial.
+4. BÚSQUEDA DE PRODUCTO. Permite la búsqueda de un producto dentro del inventario mediante su código.
+5. SACAR DINERO DE LA MÁQUINA: Retira dinero de la máquina.
+6. AGREGAR DINERO A LA MÁQUINA: Introduce dinero a la máquina.
  
 ## PUESTA EN MARCHA:
-1. proceso para ingresar dinero:
-a) Para el ingreso de dinero, dirigirse al menú de mantenimiento, posteriormente a la opción 6. SACAR DINERO DE LA MÁQUINA.
+1. Sproceso para ingresar dinero:
+a) Para el ingreso de dinero, dirigirse al menú de mantenimiento, posteriormente a la opción 5. SACAR DINERO DE LA MÁQUINA.
 b) Ingrese la cantidad de dinero a ingresar, se recomienda como cantidad mínima mil pesos (1000.00 MXN).
 c) Ingrese el dinero.
 
 2. proceso para retirar dinero:
-a) Para el ingreso de dinero, diríjase al menú de mantenimiento, posteriormente a la opción 5. AGREGAR DINERO A LA MÁQUINA.
+a) Para el ingreso de dinero, diríjase al menú de mantenimiento, posteriormente a la opción 6. AGREGAR DINERO A LA MÁQUINA.
 b) Ingrese la cantidad de dinero a ingresar, se recomienda como cantidad mínima mil pesos (1000.00 MXN).
 c) Ingrese el dinero.
 
