@@ -12,7 +12,6 @@ Proyecto Final del curso de UNICA: Fundamentos de Programación y Generación de
 Al iniciarse el programa carga una lista inicial de productos desde un archivo llamado Productos.csv, la estructura de este archivo debe ser la siguiente:
 
 | Tipo(Botana/Bebida) |Nombre |Precio|Marca|Fecha de caducidad|Peso / Volumen|Cantidad|
-
 |--|--|--|--|--|--|--|
 
   
