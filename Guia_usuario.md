@@ -9,22 +9,22 @@
 
  1. En el menú de bienvenida presiona  1 "comprar productos"
 
-![enter image description here](https://raw.githubusercontent.com/Francisco-Galindo/ideal-potato/main/Imagenes/menu1.png?token=GHSAT0AAAAAAB6YBBGGWLHOO54NAWXLWPPOZAFMS5Q)
+![enter image description here](https://i.imgur.com/vpKiRwL.png)
 
  2. Ingresa los códigos de los productos que quieres comprar separados
     por una coma, por ejemplo: "refresco,papas,dulces"
 
-![enter image description here](https://raw.githubusercontent.com/Francisco-Galindo/ideal-potato/main/Imagenes/menu2.png?token=GHSAT0AAAAAAB6YBBGHE2JQPBN5IKHNTS4OZAFMOXQ)
+![enter image description here](https://i.imgur.com/MqraKmM.png)
 
  3. Ingresa la cantidad de dinero que muestra la maquina, puedes
     ingresar mas y la maquina te devolvera tu cambio.
 
-![enter image description here](https://raw.githubusercontent.com/Francisco-Galindo/ideal-potato/main/Imagenes/menu3.png?token=GHSAT0AAAAAAB6YBBGGTPT3XEDS24AIDGS2ZAFMO6A)
+![enter image description here](https://i.imgur.com/pGzDMQ5.png)
 
  4. No olvides tu ticket de compra
 
 		
-![enter image description here](https://raw.githubusercontent.com/Francisco-Galindo/ideal-potato/main/Imagenes/ticket.png?token=GHSAT0AAAAAAB6YBBGHJKZZEMOUQEM27DEIZAFMPFQ)
+![enter image description here](https://i.imgur.com/ie8htup.png)
 
  5. ¡Disfruta tu compra !
 
