@@ -1,4 +1,3 @@
-from Producto import *
 from Inventario import *
 from datetime import datetime
 
@@ -49,8 +48,6 @@ class Maquina():
 
 
     def darCambio(self):
-        # TODO: Obtener precio total de los productos que se solicitan
-
         cambio = self.__currPago - self.__total
 
 
@@ -68,17 +65,13 @@ class Maquina():
         return True
 
     def darProductos(self):
-        # TODO: Obtener producto del inventario conforme a pila de productos
         while self.__listaCodigos:
             codigo = self.__listaCodigos.pop()
 
             producto = self.inventario.Compra_Usuario(codigo)
-            print("AAA", producto)
-            # producto = codigo
             if producto:
                 print(f"Aquí está su {producto}")
 
-                # TODO actualizar cuando esté lista la clase Inventario
                 self.__infoTicket.append({
                     "codigo": codigo,
                     "precio": producto.get_precio()
@@ -88,7 +81,6 @@ class Maquina():
                 print("No se pudo sacar el producto")
                 break
 
-    #TODO incluir los precios de los productos
     def imprimirTicket(self):
         """Imprime el ticket de compra"""
 
@@ -118,10 +110,9 @@ class Maquina():
         pass
 
     def hacerTransaccion(self):
-        # TODO Leer opciones
-        line = input("\nIngrese la lista de productos a comprar (separado por comas: A,B,C,...): ")
+        line = input("\nIngrese la lista de productos a comprar (separado por comas: Coca,Pepsi,Sab, ...): ")
         codigos = line.split(',')
-        # TODO Calcular total y agregar productos a la pila de productos
+
         self.__total = 0
         for codigo in codigos:
             codigo = codigo.strip()

@@ -8,7 +8,13 @@ class Inventario:
         self.ListaHistorial=[]
 
         self.ListaProducto = self.Carga_csv()
-        print(self.ListaProducto)
+
+    def mostrarListaProductos(self):
+        print("==============Lista de productos==============")
+        print("Producto\t\tCódigo\t\tPrecio\n")
+        for producto in self.ListaProducto:
+            print(f"{producto.nombre}\t\t{producto.codigo}\t\t${producto.get_precio():.2f}")
+        print("==============================================\n")
 
     def Carga_csv(self)->list:
         """Carga un archivo "Producto.csv" y regresa una lista de productos.\n

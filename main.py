@@ -7,13 +7,7 @@ maquina = Maquina(1000, "123")
 print("Bienvenido!")
 
 while True:
-    print("""
-          +---+ +---+ +---+ +---+ +---+ +---+
-          |   | |   | |   | |   | |   | |   |
-          | A | | B | | C | | D | | E | | F |
-          |   | |   | |   | |   | |   | |   |
-          +---+ +---+ +---+ +---+ +---+ +---+
-    """)
+    maquina.inventario.mostrarListaProductos()
 
     print("Acciones a realizar")
     print("1. Comprar productos")
@@ -34,15 +28,14 @@ while True:
             print("Contraseña incorrecta...")
 
         while maquina.sesionIniciada:
-            print('*****INVENTARIO*****')
-            print('')
+            print('*****INVENTARIO*****\n')
             print('****** Menú Principal ******')
             print('0. SALIR')
             print('1. INGRESO DE PRODUCTO')
             print('2. EGRESO DE PRODUCTO')
             print('3. HISTORIAL DE MOVIMIENTOS')
             print('4. BUSQUEDA DE PRODUCTO')
-            opcion=input('Digitar una Opción: ')
+            opcion = input('Digitar una Opción: ')
             if opcion =='0':
                 print("Gracias por usar nuestro servicio. ¡Hasta luego!")
                 break
