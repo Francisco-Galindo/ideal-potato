@@ -1,5 +1,6 @@
 # MANUAL PARA EL OPERADOR DE LA MÁQUINA
 
+![image](https://user-images.githubusercontent.com/125548315/223007898-51bf29c4-5e5c-4f41-848a-d266db2d220f.png)
 
 ### CARACTERISTICAS TECNICAS:
 1. Productos disponibles: *se refiere a la capacidad de nuestra máquina.
