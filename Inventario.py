@@ -135,6 +135,8 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
             Nombre = input("Ingrese la Descripción del Producto: ")
             marca = input("Ingrese la marca del Producto: ")
             fecha = input("Ingrese la fecha de caducidad del Producto: ")
+            tipo = input("Se trata de una botana o de una bebida? (botana, bebida): ").lower().strip()
+            volpeso = input("Volumen o peso (500ml, 60g): ")
         else:
             print("Nombre del Producto: ",Nombre)
 
@@ -143,8 +145,13 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
         Orden = input("Ingrese el Número de Orden de Compra: ")
 
         if not self.BuscarProducto(Codigo):
-            producto = Producto(Nombre, Precio, Codigo, marca, fecha, Cantidad)
-            print(producto)
+            producto = None
+            if tipo == 'botana':
+                producto = Botana(Nombre, Precio, Codigo, marca, fecha, volpeso, Cantidad)
+            else:
+                producto = Bebida(Nombre, Precio, Codigo, marca, fecha, volpeso, Cantidad)
+
+            # print(producto)
             self.ListaProducto.append(producto)
         else:
             self.ActualizarSaldo(Codigo, 'Ingreso', Cantidad)
