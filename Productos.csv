@@ -1,5 +1,11 @@
 Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caducidad,Peso/Volumen,Cantidad
-Bebida,CocaCola Light,20.5,Coca1,CocaCola,Junio 2023,600ml,5
-Botana,Sabritas Sal,16.4,SabSal,Sabritas,Abril 2023,50g,2
-Botana,Gansito,15.5,GansMarinela,Marinela,Abril 2023,50g,3
-Bebida,Pepsi Black,15.0,PepsiBl,Pepsi,Julio 2023,600ml,4
+Bebida,CocaCola Light,20.5,A,CocaCola,Junio 2023,600ml,6
+Botana,Sabritas Sal,16.4,B,Sabritas,Abril 2023,50g,5
+Botana,Gansito,15.5,C,Marinela,Abril 2023,50g,7
+Bebida,Pepsi Black,15.0,D,Pepsi,Julio 2023,600ml,5
+Botana,Churrumais,7.50,E,Sabritas,Mayo 2023,36g,9
+Botana,Cacahuates Japoneses,25.0,F,Kiyakis,Agosto 2023,150g,8
+Bebida,Red Bull,47.0,G,Red Bull,Enero 2024,250ml,10
+Bebida,7UP,15.0,H,7UP,Febrero 2024,600ml,7
+Botana,Pinguinos,20.0,I,Marinela,Abril 2023,80g,11
+Botana,Panquecitos Bimbo,35.5,J,Bimbo,Mayo 2023,210g,4
