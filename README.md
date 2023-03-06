@@ -70,7 +70,7 @@ Al iniciarse el programa carga una lista inicial de productos desde un archivo l
 	 - List item
 
 	Métodos:
-	 - Imprimir_Ticket: Crea un ticket de compra en formato txt <Ticket(Fecha).txt>. Recibe como argumento #TODO incluir argumentos
+	 - Imprimir_Ticket: Crea un ticket de compra en formato txt <Ticket(Fecha).txt>.
 	
 
 	
