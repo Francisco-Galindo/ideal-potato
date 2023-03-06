@@ -1,30 +1,30 @@
-# MANUAL PARA EL OPERADOR DE LA MÁQUINA
+# **MANUAL PARA EL OPERADOR DE LA MÁQUINA**
 
 ![image](https://user-images.githubusercontent.com/125548315/223007898-51bf29c4-5e5c-4f41-848a-d266db2d220f.png)
 
-### CARACTERISTICAS TECNICAS:
+### > CARACTERISTICAS TECNICAS:
 1. Productos disponibles:
-La máquina expendedora puede albergar una gran cantidad de productos comercializados en bolsas de polipropileno, así como de botellas de plástico reutilizable amigables con el medio ambiente, el operador debe cuidar que el orden de compra corresponda con el lote de productos asignados para la máquina así como la revisión de fecha de caducidad de los productos.
+La máquina expendedora puede albergar una gran cantidad de productos comercializados en bolsas de polipropileno, así como de botellas de plástico reutilizable amigables con el medio ambiente, el operador debe cuidar que el orden de compra corresponda con el lote de productos asignados para la máquina, así como la revisión de fecha de caducidad de los productos.
 
 2. Capacidad de los productos:
 Para productos en bolsas de polipropileno el peso mínimo correspondiente al producto debe ser mínimo de 20 gramos (gr) hasta un máximo de 100 gramos (gr).
 Para productos en botellas de plástico el volumen mínimo correspondiente al producto debe ser mínimo de 50 mililitros (ml) hasta un máximo de 1000 mililitros (ml).
 
-Sin embargo, el operador puede ingresar por medio del software el peso y volumen del producto según sea el caso.
+Sin embargo, el operador puede ingresar por medio del software cualquier peso y volumen del producto según sea el caso.
 
-## CARACTERÍSTICAS GENERALES:
+## > CARACTERÍSTICAS GENERALES:
 1. Panel de pulsadores y display.
 La pantalla inicial de la máquina debería visualizarse de la siguiente manera:
 ![image](https://user-images.githubusercontent.com/125548315/223023417-7fcb53a8-cf65-4581-934a-43595b8665fe.png)
 
 
 A continuación, procederemos a elegir la opción número 2 "Ingreso de mantenimiento" para entrar a la opción de mantenimiento.
-Posteriormente el operador ingresará la contraseña super secreta proporcionada en el centro de trabajo o por el fabricante del modelo en cuestión de la máquina.
+Posteriormente el operador ingresará la contraseña super secreta proporcionada en el centro de trabajo o por el fabricante del modelo en cuestión de la máquina expendedora.
 una vez se accede a la interfaz de mantenimiento se mostrará el siguiente menú:
 ![image](https://user-images.githubusercontent.com/125548315/223023913-c34d6ec6-f9bd-4ce7-b999-a4f3df41ea77.png)
 
-OPCIONES GENERALES.
-El operador tiene que elegir a una opción del menú digitando el digito correspondiente:
+## > OPCIONES GENERALES.
+El operador tiene que elegir a una opción del menú eligiendo el digito correspondiente:
 0. SALIR: Sale de la interfaz de mantenimiento.
 1. INGRESO DE PRODUCTO: Programa el ingreso de productos para la máquina y la creación de su código correspondiente. El operador debe ingresar las características: Descripción, marca, fecha de caducidad, unidades a ingresar, precio unitario y orden de compra del producto.
 2. EGRESO DE PRODUCTO: Programa el egreso de productos para la máquina. El operador debe ingresar el código del producto, las unidades a retirar y el número de factura.
@@ -33,13 +33,13 @@ El operador tiene que elegir a una opción del menú digitando el digito corresp
 5. SACAR DINERO DE LA MÁQUINA: Retira dinero de la máquina.
 6. AGREGAR DINERO A LA MÁQUINA: Introduce dinero a la máquina.
  
-## PUESTA EN MARCHA:
-1. Sproceso para ingresar dinero:
-a) Para el ingreso de dinero, dirigirse al menú de mantenimiento, posteriormente a la opción 5. SACAR DINERO DE LA MÁQUINA.
-b) Ingrese la cantidad de dinero a ingresar, se recomienda como cantidad mínima mil pesos (1000.00 MXN).
-c) Ingrese el dinero.
+## > PUESTA EN MARCHA:
+1. Proceso para retirar dinero:
+a) Para el retiro de dinero, dirigirse al menú de mantenimiento, posteriormente a la opción 5. SACAR DINERO DE LA MÁQUINA.
+b) Ingrese la cantidad de dinero a retirar.
+c) Retire el dinero.
 
-2. proceso para retirar dinero:
+2. proceso para ingresar dinero:
 a) Para el ingreso de dinero, diríjase al menú de mantenimiento, posteriormente a la opción 6. AGREGAR DINERO A LA MÁQUINA.
 b) Ingrese la cantidad de dinero a ingresar, se recomienda como cantidad mínima mil pesos (1000.00 MXN).
 c) Ingrese el dinero.
@@ -51,24 +51,24 @@ c) Programe el ingreso de productos.
 
 4. proceso para retirar Productos:
 a) Para el ingreso de productos, diríjase al menú de mantenimiento, posteriormente a la opción 2. EGRESO DE PRODUCTO.
-b) Introduzca el Código del producto a retirar y la cantidad de unidades a retirar de la máquina.
+b) Introduzca el Código del producto a retirar y la cantidad de unidades del producto a retirar de la máquina.
 c) Finalmente introduzca el número de factura.
 
 5. proceso para designar códigos:
 a) Para designar un nuevo código, diríjase al menú de mantenimiento, posteriormente a la opción 1. INGRESO DE PRODUCTO.
 b) Ingrese el nuevo código para el producto.
-c) Siga el llenado de datos para el producto.
+c) Siga el llenado de datos para el producto de manera normal.
 
-# ANOMALIAS NO DETECTADAS POR LA MÁQUINA:
+## > ANOMALIAS NO DETECTADAS POR LA MÁQUINA:
 1. Anomalías que dejan a la máquina fuera de servicio:
 Introducción de caracteres especiales: El operador debe cuidar la introducción del carácter especial coma (" , ") cuando ingresa datos en cualquier campo del menú ya que es posible que se generen errores en la documentación de archivos de compra.
 
-introducción de códigos repetidos: El operador debe evitar la introducción de códigos repetidos ya que la máquina no permite los códigos duplicados y automáticamente actualiza el producto, para evitar este error se recomienda el uso de la función 4. BUSQUEDA DE PRODUCTO.
+Introducción de códigos repetidos: El operador debe evitar la introducción de códigos repetidos ya que la máquina no permite los códigos duplicados y automáticamente actualiza el producto, para evitar este error se recomienda el uso de la función 4. BUSQUEDA DE PRODUCTO.
 
 2. Indicadores de la necesidad de cambiar algún módulo en la máquina:
 No hay un proceso de validación en la fecha de caducidad de los productos, por lo que el operador debe revisar este proceso manualmente.
 
-## UTILIDAD DE LAS FUNCIONES DE PROGRAMACIÓN:
+## > UTILIDAD DE LAS FUNCIONES DE PROGRAMACIÓN:
 
 ## **Carga Inicial de productos:**
 
