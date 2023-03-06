@@ -108,26 +108,26 @@ Al iniciarse el programa carga una lista inicial de productos desde un archivo l
 
 -  **Inventario**
 
-	La clase Inventario describe el el contenido de los productos almacenados en la mquina
+	La clase Inventario describe el contenido de los productos almacenados en la máquina expendedora.
 
 	Atributos:
 
-	- ListaProducto: Mantiene una lista de los productos almacenados en la maquina.
-	- ListaHistorial: Almacena las entradas del historial
+	- ListaProducto: Mantiene una lista de los productos almacenados en la máquina expendedora.
+	- ListaHistorial: Almacena las entradas del historial.
   
 
 	Métodos:
 
   
-	- mostrarListaProductos: Muestra en pantalla el nombre, codigo y precio de los productos disponibles.]
+	- mostrarListaProductos: Muestra en pantalla el nombre, código y precio de los productos disponibles.
 	- Carga_csv: Carga la lista de productos desde un archivo csv ("Productos.csv") y regresa una lista de productos.
-	- BuscarNombre: Regresa el nombre de un producto, recibe como argumento el codigo del producto(str).
-	- BuscarProducto: Regresa una lista con la informacion del producto, recibe como argumento el codigo del producto (str).
-	- mostrarProducto: Muestra en pantalla los datos obtenidos por la funcion BuscarProducto, recibe como argumento el codigo del producto (str)
+	- BuscarNombre: Regresa el nombre de un producto; recibe como argumento el código del producto(str).
+	- BuscarProducto: Regresa una lista con la información del producto; recibe como argumento el código del producto (str).
+	- mostrarProducto: Muestra en pantalla los datos obtenidos por la funcion BuscarProducto; recibe como argumento el código del producto (str)
 	- Ingreso: Permite al usuario ingresar nuevos productos y actualizar los productos existentes.
 	- Egreso: Permite retirar productos.
-	- ActualizarSaldo: Actualiza la cantidad que hay de algun producto, es llamada por las funciones Ingreso y Egreso, recibe como argumento codigo (str), TipoMovimiento(str, Ingreso/Egreso), cantidad (int)
-	- Compra_Usuario: Actualiza el historial cuando el usuario hace una compra. Recibe como argumento el codigo del producto (str)
+	- ActualizarSaldo: Actualiza la cantidad que hay de algún producto. Es llamada por las funciones Ingreso y Egreso; recibe como argumento código (str), TipoMovimiento(str, Ingreso/Egreso), cantidad (int).
+	- Compra_Usuario: Actualiza el historial cuando el usuario hace una compra; recibe como argumento el código del producto (str)
 	- Historial: Imprime el historial de un producto.
 
   
