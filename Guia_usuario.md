@@ -9,22 +9,22 @@
 
  1. En el menú de bienvenida presiona  1 "comprar productos"
 
-![enter image description here](https://i.imgur.com/vpKiRwL.png)
+![enter image description here](./Imagenes/menu1.png)
 
  2. Ingresa los códigos de los productos que quieres comprar separados
     por una coma, por ejemplo: "refresco,papas,dulces"
 
-![enter image description here](https://i.imgur.com/MqraKmM.png)
+![enter image description here](./Imagenes/menu2.png)
 
  3. Ingresa la cantidad de dinero que muestra la maquina, puedes
     ingresar mas y la maquina te devolvera tu cambio.
 
-![enter image description here](https://i.imgur.com/pGzDMQ5.png)
+![enter image description here](./Imagenes/menu3.png)
 
  4. No olvides tu ticket de compra
 
 		
-![enter image description here](https://i.imgur.com/ie8htup.png)
+![enter image description here](./Imagenes/ticket.png)
 
  5. ¡Disfruta tu compra !
 
