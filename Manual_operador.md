@@ -3,30 +3,69 @@
 ![image](https://user-images.githubusercontent.com/125548315/223007898-51bf29c4-5e5c-4f41-848a-d266db2d220f.png)
 
 ## CARACTERISTICAS TECNICAS:
-1. Productos disponibles: *se refiere a la capacidad de nuestra máquina.
+1. Productos disponibles:
+La máquina expendedora puede albergar una gran cantidad de productos comercializados en bolsas de polipropileno así como de botellas de plastico reutilizable amigables con el medio ambiente, el operador debe cuidar que el orden de compra corresponda con el lote de productos asignados para la máquina así como la revisión de fecha de caducidad de los productos.
 
+2. Capacidad de los productos:
+Para productos en bolsas de polipropileno el peso minimo correspondiente al producto debe ser minimo de 20 gramos (gr) hasta un máximo de 100 gramos (gr).
+Para productos en botellas de plastico el volumen minimo correspondiente al producto debe ser minimo de 50 mililitros (ml) hasta un máximo de 1000 mililtros (ml).
 
-2. Capacidad de los productos: *se refiere al volumen y peso
-
+Sin embargo, el operador puede ingresar por medio del sofware el peso y volumen del producto según sea el caso.
 
 ## CARACTERÍSTICAS GENERALES:
-1. Panel de pulsadores y display (descripción y captura de imagen).
+1. Panel de pulsadores y display.
+La pantalla inicial de la máquina deberia visualizarse de la siguiente manera:
+~imagen~
 
+A continuación procederemos a elegir la opción número 2 "Ingreso de mantenimiento" para entrar a la opcion de mantenimiento.
+Posteriormente el operador ingresará la contraseña super secreta proporcionada en el centro de trabajo o por el fabricante del modelo en cuestión de la máquina.
+una vez se accede a la interfaz de mantenimiento se mostrará el siguiente menú:
+~imagen~
+
+OPCIONES GENERALES.
+El operador tiene que elegir a una opción del menú digitando el digito correspondiente:
+0. Sale de la interfaz de mantenimiento.
+1. Programa el ingreso de productos para la máquina y la creación de su código correspondiente. El operador debe ingresar las caracteristicas: Descripción, marca, fecha de caducidad, unidades a ingresar, precio unitario y orden de compra del producto.
+2. Programa el egreso de productos para la máquina. El operador debe ingresar el código del producto, las unidades a retirar y el número de factura.
+3. Historial de movimientos. El operador debe ingresar el código de un producto para generar su historial.
+4. Permite la búsqueda de un producto dentro del inventario mediante su código.
+5. Retira dinero de la máquina.
+6. Introduce dinero a la máquina.
+ 
 ## PUESTA EN MARCHA:
 1. proceso para ingresar dinero:
+a) Para el ingreso de dinero, dirigase al menú de mantenimiento, posteriormente a la opcion 6. SACAR DINERO DE LA MÁQUINA.
+b) Ingrese la cantidad de dinero a ingresar, se recomienda como cantidad minima mil pesos (1000.00 MXN).
+c) Ingrese el dinero.
 
 2. proceso para retirar dinero:
+a) Para el ingreso de dinero, dirigase al menú de mantenimiento, posteriormente a la opcion 5. AGREGAR DINERO A LA MÁQUINA.
+b) Ingrese la cantidad de dinero a ingresar, se recomienda como cantidad minima mil pesos (1000.00 MXN).
+c) Ingrese el dinero.
 
 3. proceso para ingresar productos:
+a) Para el ingreso de productos, dirigase al menú de mantenimiento, posteriormente a la opcion 1. INGRESO DE PRODUCTO.
+b) Siga las instrucciones hasta llegar al campo "Ingrese la Cantidad a ingresar del Producto:".
+c) Programe el ingreso de productos.
 
 4. proceso para retirar Productos:
+a) Para el ingreso de productos, dirigase al menú de mantenimiento, posteriormente a la opcion 2. EGRESO DE PRODUCTO.
+b) Introduca el codigo del producto a retirar y la cantidad de unidades a retirar de la máquina.
+c) Finalmente introduzca el número de factura.
 
 5. proceso para designar códigos:
+a) Para designar un nuevo código, dirigase al menú de mantenimiento, posteriormente a la opcion 1. INGRESO DE PRODUCTO.
+b) Ingrese el nuevo código para el producto.
+c) Siga el llenado de datos para el producto.
 
-# ANOMALIAS DETECTADAS POR LA MÁQUINA:
+# ANOMALIAS NO DETECTADAS POR LA MÁQUINA:
 1. Anomalías que dejan a la máquina fuera de servicio:
+Introducción de caracteres especiales: El operador debe cuidar la introducción del caracter especial coma (" , ") cuando ingresa datos en cualquier campo del menú ya que es posible que se generen errores en la documentación de archivos de compra.
+
+Introduccion de codigos repetidos: El operador debe evitar la introducción de codigos repetidos ya que la máquina no permite los codigos duplicados y automaticamente actualiza el producto, para evitar este error se recomienda el uso de la funcion 4. BUSQUEDA DE PRODUCTO.
 
 2. Indicadores de la necesidad de cambiar algún módulo en la máquina:
+No hay un proceso de validación en la fecha de caducidad de los productos, por lo que el operador debe revisar este proceso manualmente.
 
 ## UTILIDAD DE LAS FUNCIONES DE PROGRAMACIÓN:
 
