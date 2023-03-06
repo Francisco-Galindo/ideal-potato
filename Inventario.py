@@ -5,11 +5,11 @@ class Inventario:
     def __init__(self):
         ListaProducto=[]
         ListaHistorial=[]
-        CantidadProducto=[] 
-        Cantidad=[] 
+        CantidadProducto=[]
+        Cantidad=[]
         Producto = []
         Historial = []
-        
+
 
     def Carga_csv()->list:
         """Carga un archivo "Producto.csv" y regresa una lista de productos.\n
@@ -31,17 +31,17 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
     def Buscar(self): #codigo me ayuda a buscar el codigo del producto
         """
         It returns the length of the list
-        
+
         :param Codigo: The code of the product
         :return: The length of the list.
         """
         Tamaño_Lista = len(ListaProducto) #me retorna la longitud de la lista.
         return Tamaño_Lista
-    
+
     def BuscarNombre(self, Codigo):
         """
         It searches for a product name based on a product code.
-        
+
         :param Codigo: The code of the product
         :return: The name of the product.
         """
@@ -59,7 +59,7 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
     def BuscarProducto(self, Codigo):
         """
         It searches for a product in the list.
-        
+
         :param Codigo: Product code
         :return: A list of the product's information.
         """
@@ -76,7 +76,7 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
     def BuscarProducto2(self, Codigo):
         """
         If the first element of the list is equal to the code, then print the elements of the list.
-        
+
         :param Codigo: The code of the product
         """
         Producto = []
@@ -91,13 +91,13 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
     def ActualizarSaldo(self, Codigo, TipoMovimiento, Cantidad, Total):
         """
         It removes the product from the list, then adds it back with the updated values.
-        
+
         :param Codigo: Product code
         :param TipoMovimiento: It's a string that can be either "Ingreso" or "Salida"
         :param Cantidad: Quantity
         :param Total: Total amount of the product
         """
-    
+
         Producto=[]
         for CantidadProducto in ListaProducto:
             if CantidadProducto[0] == Codigo:
@@ -136,7 +136,7 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
         Nombre = BuscarNombre(Codigo)
         if Nombre == '':
             Nombre = input("Ingrese la Descripción del Producto: ")
-    # It's asking for the product name if it's not in the list.
+        # It's asking for the product name if it's not in the list.
         else:
             Nombre = BuscarNombre(Codigo)
             print("Nombre del Producto: ",Nombre)
@@ -144,7 +144,7 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
         Precio = input("Ingrese el Precio Unitario: ")
         Total = float(Cantidad)*float(Precio)
         Orden = input("Ingrese el Número de Orden de Compra: ")
-    # It's adding the product to the list.
+        # It's adding the product to the list.
         if Buscar(Codigo) == 0:
             CantidadProducto.append(Codigo)
             CantidadProducto.append(Nombre)
@@ -152,7 +152,7 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
             CantidadProducto.append(Precio)
             CantidadProducto.append(Total)
             ListaProducto.append(CantidadProducto)
-    # It's adding the product to the list.
+        # It's adding the product to the list.
         else:
             ActualizarSaldo(Codigo, Ingreso, Cantidad, Total)
         Historial.append(Ingreso)
@@ -164,15 +164,15 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
         Historial.append(Orden)
         ListaHistorial.append(Historial)
         print('')
-    
+
     def Egreso():
-    # It's asking for the product code and then it's searching for the product in the list.
+        # It's asking for the product code and then it's searching for the product in the list.
         Historial = []
         print('')
         print('****** RETIRO DE PRODUCTO ******')
         Codigo=input("Ingrese el Código del Producto: ")
         Cantidad = BuscarProducto(Codigo)
-    # It's asking for the product code and then it's searching for the product in the list.
+        # It's asking for the product code and then it's searching for the product in the list.
         if len(Cantidad)>0:
             print("Nombre del Producto: ",Cantidad[1])
             print("Costo del Producto: ",Cantidad[3])
@@ -190,13 +190,13 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
             ListaHistorial.append(Historial)
             print('')
 
-    # It's printing a message if the product is not in the list.
+        # It's printing a message if the product is not in the list.
         else:
             print("¡¡Producto No existe en la base de datos!!")
 
     def Compra_Usuario():
-    #aqui para poder ingresar alguna variable para la compra.
-    #se relaciona con la linea 195
+        #aqui para poder ingresar alguna variable para la compra.
+        #se relaciona con la linea 195
         pass
 
     def Egreso_Usuario():
@@ -221,7 +221,7 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
             ActualizarSaldo(Codigo,'Egreso',Cantidad2,Total)
             ListaHistorial.append(Historial)
             print('')
-    # It's printing a message if the product is not in the list.
+        # It's printing a message if the product is not in the list.
         else:
             print("¡¡Producto No existe en la base de datos!!")
 
@@ -244,35 +244,35 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
                 if Historial[1] == Codigo:
                     print(Historial[1],Historial[2],Historial[0],Historial[3],Historial[4],Historial[5],sep = "\t")
         print('')
-    
 
 
-    while (1):
-        print('*****INVENTARIO*****')
+
+while (1):
+    print('*****INVENTARIO*****')
+    print('')
+    print('****** Menú Principal ******')
+    print('0. SALIR')
+    print('1. INGRESO DE PRODUCTO')
+    print('2. EGRESO DE PRODUCTO')
+    print('3. PRODUCTOS COMPRADOS')
+    print('4. HISTORIAL DE MOVIMIENTOS')
+    print('5. BUSQUEDA DE PRODUCTO')
+    opcion=input('Digitar una Opción: ')
+    if opcion =='0':
+        print("Gracias por usar nuestro servicio. ¡Hasta luego!")
+        break
+    elif opcion == '1':
+        Ingreso()
+    elif opcion == '2':
+        Egreso()
+    elif opcion == '3':
+        Egreso_Usuario()
+    elif opcion == '4':
+        Historial()
+    elif opcion == '5':
         print('')
-        print('****** Menú Principal ******')
-        print('0. SALIR')
-        print('1. INGRESO DE PRODUCTO')
-        print('2. EGRESO DE PRODUCTO')
-        print('3. PRODUCTOS COMPRADOS')
-        print('4. HISTORIAL DE MOVIMIENTOS')
-        print('5. BUSQUEDA DE PRODUCTO')
-        opcion=input('Digitar una Opción: ')
-        if opcion =='0':
-            print("Gracias por usar nuestro servicio. ¡Hasta luego!")
-            break
-        elif opcion == '1':
-            Ingreso()
-        elif opcion == '2':
-            Egreso()
-        elif opcion == '3':
-            Egreso_Usuario()
-        elif opcion == '4':
-            Historial()
-        elif opcion == '5':
-            print('')
-            print('****** BUSQUEDA DE PRODUCTO ******')
-            Codigo = input("Ingrese el Código del Producto: ")
-            BuscarProducto2(Codigo)
-        else:
-            print('Opción no válida. Intente nuevamente')
+        print('****** BUSQUEDA DE PRODUCTO ******')
+        Codigo = input("Ingrese el Código del Producto: ")
+        BuscarProducto2(Codigo)
+    else:
+        print('Opción no válida. Intente nuevamente')
