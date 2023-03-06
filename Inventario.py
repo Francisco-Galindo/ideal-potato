@@ -139,7 +139,7 @@ class Inventario:
                 print('Productos Restantes: ', producto.cantidad)
                 print('Costo de los productos restantes: ', producto.cantidad * producto.get_precio())
             else:
-                print(f'Ya no hay {producto} :(')
+                print(f'No hay suficiente {producto} para realizar la operación')
                 return False
         else:
             if producto.cantidad - float(Cantidad) >= 0:
