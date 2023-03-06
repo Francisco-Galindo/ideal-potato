@@ -184,5 +184,3 @@ Al iniciarse el programa carga una lista inicial de productos desde un archivo l
 	- sacarDinero: Permite al administrador retirar todo el dinero de la maquina.
 	
 	- agregarDinero: Permite al administrador agregar dinero a la maquina. recibe como argumento la cantidad a agregar (float)
-
-	- desatascar: Permite desatascar la máquina expendedora en caso de ser necesario.
