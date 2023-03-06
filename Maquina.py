@@ -14,7 +14,7 @@ class Maquina():
     :param dinero: La cantidad de dinero que tiene la máquina al inicio
     :param password: La contraseña para entrar como persona de mantenimiento
     """
-    def __init__(self, dinero, password):
+    def __init__(self, dinero = 1000, password = '123'):
         self.__pasword = password
         self.__dinero = dinero
         self.__atascada = False
@@ -29,6 +29,10 @@ class Maquina():
         self.inventario = Inventario()
 
     def recibirPago(self):
+        """
+        Permite recibir pagos del usuario, verifica que se ingrese la cantidad
+        correcta de dinero.
+        """
         debePagar = True
 
         print(f"Son ${self.__total:.2f}")
@@ -43,11 +47,14 @@ class Maquina():
 
             if self.__currPago >= self.__total:
                 debePagar = False
-            else:
-                print(f"Todavía faltan ${self.__total - self.__currPago:.2f}...")
+            else: print(f"Todavía faltan ${self.__total - self.__currPago:.2f}...")
 
 
     def darCambio(self):
+        """
+        Calcula el cambio que se le debe al usuario y verifica que la máquina
+        expendedora tenga suficiente dinero.
+        """
         cambio = self.__currPago - self.__total
 
 
@@ -65,6 +72,10 @@ class Maquina():
         return True
 
     def darProductos(self):
+        """
+        Itera sobre los códigos pedidos por el usuario e intenta entregar
+        los productos
+        """
         while self.__listaCodigos:
             codigo = self.__listaCodigos.pop()
 
@@ -105,11 +116,13 @@ class Maquina():
 
         self.__infoTicket = []
 
-    # TODO
-    def guardarEnHistorial(self):
-        pass
-
     def hacerTransaccion(self):
+        """
+        Método que se encarga de llevar a cabo la transacción con el usuario,
+        el usuario ingresa los productos que quiere comprar ingresando sus
+        códigos separados por comas, mantiene la cuenta del total a pagar y de
+        la lista de códigos.
+        """
         line = input("\nIngrese la lista de productos a comprar (separado por comas: Coca,Pepsi,Sab, ...): ")
         codigos = line.split(',')
 
@@ -143,28 +156,47 @@ class Maquina():
             print("No has pagado lo suficiente...")
 
     def acceder(self, passwd):
+        """
+        Permite al administrador acceder a las funciones del sistema usando su
+        contraseña por defecto es "123"; se recomienda cambiarla.
+        """
         if passwd == self.__pasword:
             self.__sesionIniciada = True
         else:
             self.__sesionIniciada = False
 
     def salir(self):
+        """
+        Permite cerrar la sesión del administrador.
+        """
         self.__sesionIniciada = False
 
     def cambiarContra(self, passwd):
+        """
+        Recibe como argumento la nueva contraseña (str) y cambia la contraseña
+        del administrador.
+        """
         if self.__sesionIniciada:
             self.__pasword = passwd
         else:
             return
 
     def sacarDinero(self):
+        """
+        Permite al administrador retirar todo el dinero de la máquina.
+        """
         if self.__sesionIniciada:
             print(f"\nSacaste los ${self.__dinero:.2f} de la máquina\n")
             self.__dinero = 0
         else:
             return
 
-    def agregarDinero(self, dinero):
+    def agregarDinero(self, dinero: float):
+        """
+        Permite al administrador agregar dinero a la maquina. recibe como
+        argumento la cantidad a agregar (float)
+        """
+
         if self.__sesionIniciada:
             self.__dinero += dinero
             print(f"\nAgregando ${dinero:.2f} a la máquina, ahora tiene ${self.__dinero:.2f}\n")
