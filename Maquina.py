@@ -164,6 +164,13 @@ class Maquina():
         else:
             return
 
+    def agregarDinero(self, dinero):
+        if self.__sesionIniciada:
+            self.__dinero += dinero
+            print(f"\nAgregando ${dinero:.2f} a la máquina, ahora tiene ${self.__dinero:.2f}\n")
+        else:
+            return
+
     @property
     def sesionIniciada(self):
         """Getter, regresa el estado del inicio de sesión"""

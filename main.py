@@ -35,6 +35,7 @@ while True:
             print('3. Historial de movimientos')
             print('4. Búsqueda de producto')
             print('5. Sacar dinero de la máquina')
+            print('6. Agregar dinero a la máquina')
             opcion = input('\nDigitar una Opción: ')
             if opcion =='0':
                 print("Gracias por usar nuestro servicio. ¡Hasta luego!")
@@ -52,6 +53,12 @@ while True:
                 maquina.inventario.mostrarProducto(Codigo)
             elif opcion == '5':
                 maquina.sacarDinero()
+            elif opcion == '6':
+                try:
+                    dinero = float(input("Dinero a agregar: "))
+                    maquina.agregarDinero(dinero)
+                except ValueError:
+                    print("Se necesitan valores numéricos...")
             else:
                 print('Opción no válida. Intente nuevamente')
 
