@@ -2,7 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/125548315/223007898-51bf29c4-5e5c-4f41-848a-d266db2d220f.png)
 
-### > CARACTERISTICAS TECNICAS:
+### 
+> CARACTERISTICAS TECNICAS:
 1. Productos disponibles:
 La máquina expendedora puede albergar una gran cantidad de productos comercializados en bolsas de polipropileno, así como de botellas de plástico reutilizable amigables con el medio ambiente, el operador debe cuidar que el orden de compra corresponda con el lote de productos asignados para la máquina, así como la revisión de fecha de caducidad de los productos.
 
@@ -12,7 +13,8 @@ Para productos en botellas de plástico el volumen mínimo correspondiente al pr
 
 Sin embargo, el operador puede ingresar por medio del software cualquier peso y volumen del producto según sea el caso.
 
-## > CARACTERÍSTICAS GENERALES:
+## 
+> CARACTERÍSTICAS GENERALES:
 1. Panel de pulsadores y display.
 La pantalla inicial de la máquina debería visualizarse de la siguiente manera:
 ![image](https://user-images.githubusercontent.com/125548315/223023417-7fcb53a8-cf65-4581-934a-43595b8665fe.png)
@@ -23,7 +25,8 @@ Posteriormente el operador ingresará la contraseña super secreta proporcionada
 una vez se accede a la interfaz de mantenimiento se mostrará el siguiente menú:
 ![image](https://user-images.githubusercontent.com/125548315/223023913-c34d6ec6-f9bd-4ce7-b999-a4f3df41ea77.png)
 
-## > OPCIONES GENERALES.
+## 
+> OPCIONES GENERALES.
 El operador tiene que elegir a una opción del menú eligiendo el digito correspondiente:
 0. SALIR: Sale de la interfaz de mantenimiento.
 1. INGRESO DE PRODUCTO: Programa el ingreso de productos para la máquina y la creación de su código correspondiente. El operador debe ingresar las características: Descripción, marca, fecha de caducidad, unidades a ingresar, precio unitario y orden de compra del producto.
@@ -33,7 +36,8 @@ El operador tiene que elegir a una opción del menú eligiendo el digito corresp
 5. SACAR DINERO DE LA MÁQUINA: Retira dinero de la máquina.
 6. AGREGAR DINERO A LA MÁQUINA: Introduce dinero a la máquina.
  
-## > PUESTA EN MARCHA:
+## 
+> PUESTA EN MARCHA:
 1. Proceso para retirar dinero:
 a) Para el retiro de dinero, dirigirse al menú de mantenimiento, posteriormente a la opción 5. SACAR DINERO DE LA MÁQUINA.
 b) Ingrese la cantidad de dinero a retirar.
@@ -59,7 +63,8 @@ a) Para designar un nuevo código, diríjase al menú de mantenimiento, posterio
 b) Ingrese el nuevo código para el producto.
 c) Siga el llenado de datos para el producto de manera normal.
 
-## > ANOMALIAS NO DETECTADAS POR LA MÁQUINA:
+## 
+> ANOMALIAS NO DETECTADAS POR LA MÁQUINA:
 1. Anomalías que dejan a la máquina fuera de servicio:
 Introducción de caracteres especiales: El operador debe cuidar la introducción del carácter especial coma (" , ") cuando ingresa datos en cualquier campo del menú ya que es posible que se generen errores en la documentación de archivos de compra.
 
@@ -68,7 +73,8 @@ Introducción de códigos repetidos: El operador debe evitar la introducción de
 2. Indicadores de la necesidad de cambiar algún módulo en la máquina:
 No hay un proceso de validación en la fecha de caducidad de los productos, por lo que el operador debe revisar este proceso manualmente.
 
-## > UTILIDAD DE LAS FUNCIONES DE PROGRAMACIÓN:
+## 
+> UTILIDAD DE LAS FUNCIONES DE PROGRAMACIÓN:
 
 ## **Carga Inicial de productos:**
 
