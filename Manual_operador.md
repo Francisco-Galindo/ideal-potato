@@ -21,7 +21,7 @@ La pantalla inicial de la máquina debería visualizarse de la siguiente manera:
 A continuación, procederemos a elegir la opción número 2 "Ingreso de mantenimiento" para entrar a la opción de mantenimiento.
 Posteriormente el operador ingresará la contraseña super secreta proporcionada en el centro de trabajo o por el fabricante del modelo en cuestión de la máquina.
 una vez se accede a la interfaz de mantenimiento se mostrará el siguiente menú:
-[~imagen~](https://ibb.co/9gPv013)
+![image](https://user-images.githubusercontent.com/125548315/223023913-c34d6ec6-f9bd-4ce7-b999-a4f3df41ea77.png)
 
 OPCIONES GENERALES.
 El operador tiene que elegir a una opción del menú digitando el digito correspondiente:
