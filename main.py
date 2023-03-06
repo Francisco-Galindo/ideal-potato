@@ -18,9 +18,8 @@ while True:
 
     if opcion == '1':
         maquina.hacerTransaccion()
-        input("\nPresione enter para continuar")
+        input("\nPresione enter para continuar").strip()
     elif  opcion == '2':
-        print("Mantenimiento")
 
         pw = input("Introduce la contraseña súper secreta: ")
         maquina.acceder(pw)
@@ -30,12 +29,13 @@ while True:
         while maquina.sesionIniciada:
             print('*****INVENTARIO*****\n')
             print('****** Menú Principal ******')
-            print('0. SALIR')
-            print('1. INGRESO DE PRODUCTO')
-            print('2. EGRESO DE PRODUCTO')
-            print('3. HISTORIAL DE MOVIMIENTOS')
-            print('4. BUSQUEDA DE PRODUCTO')
-            opcion = input('Digitar una Opción: ')
+            print('0. Salir')
+            print('1. Ingreso de productos')
+            print('2. Egredo de producto')
+            print('3. Historial de movimientos')
+            print('4. Búsqueda de producto')
+            print('5. Sacar dinero de la máquina')
+            opcion = input('\nDigitar una Opción: ')
             if opcion =='0':
                 print("Gracias por usar nuestro servicio. ¡Hasta luego!")
                 break
@@ -50,6 +50,8 @@ while True:
                 print('****** BUSQUEDA DE PRODUCTO ******')
                 Codigo = input("Ingrese el Código del Producto: ")
                 maquina.inventario.BuscarProducto2(Codigo)
+            elif opcion == '5':
+                maquina.sacarDinero()
             else:
                 print('Opción no válida. Intente nuevamente')
 
