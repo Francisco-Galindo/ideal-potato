@@ -17,8 +17,12 @@ class Inventario:
         print("==============================================\n")
 
     def Carga_csv(self)->list:
-        """Carga un archivo "Producto.csv" y regresa una lista de productos.\n
-La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caducidad,Peso/Volumen,Cantidad"""
+        """
+        Carga un archivo "Producto.csv" y regresa una lista de productos.
+
+        La estructura del archivo debe ser:
+            Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caducidad,Peso/Volumen,Cantidad
+        """
 
         productos=[]
         with open("Productos.csv","r") as f:
@@ -50,6 +54,10 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
             return productos
 
     def guardarCSV(self):
+        """
+        Guarda el estado de la lista de archivos en el archivo csv correspondiente
+
+        """
         with open("Productos.csv","w") as f:
             f.write("Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caducidad,Peso/Volumen,Cantidad\n")
             for producto in self.ListaProducto:
@@ -63,10 +71,10 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
 
     def BuscarNombre(self, Codigo):
         """
-        It searches for a product name based on a product code.
+        Busca un producto con el código dado y devuelve su nombre si lo encuentra
 
-        :param Codigo: The code of the product
-        :return: The name of the product.
+        :param Codigo: Código del producto
+        :return: El nombre del producto
         """
 
         producto = self.BuscarProducto(Codigo)
@@ -77,10 +85,10 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
 
     def BuscarProducto(self, Codigo):
         """
-        It searches for a product in the list.
+        Busca un producto en la lista
 
-        :param Codigo: Product code
-        :return: A list of the product's information.
+        :param Codigo: Código del producto
+        :return: El objeto correspondiente al producto
         """
 
         for CodeProducto in self.ListaProducto:
@@ -91,9 +99,9 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
 
     def mostrarProducto(self, Codigo):
         """
-        If the first element of the list is equal to the code, then print the elements of the list.
+        Imprime la información del producto si se encuentra en la lista
 
-        :param Codigo: The code of the product
+        :param Codigo: Código del producto
         """
 
         producto = self.BuscarProducto(Codigo)
@@ -109,11 +117,12 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
 
     def ActualizarSaldo(self, Codigo, TipoMovimiento, Cantidad = 1):
         """
-        It removes the product from the list, then adds it back with the updated values.
+        Toma el producto del código dado y actualiza su cantidad dependiendo
+        de los valores recibidos, también guarda el movimiento en el historial.
 
-        :param Codigo: Product code
-        :param TipoMovimiento: It's a string that can be either "Ingreso" or "Salida"
-        :param Cantidad: Quantity
+        :param Codigo: Código del producto
+        :param TipoMovimiento: El tipo del movimiento ('Ingreso', 'Egreso', 'Compra')
+        :param Cantidad: Cantidad de cambio
         """
 
         producto = self.BuscarProducto(Codigo)
@@ -125,18 +134,29 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
             print('Ingreso', producto.cantidad)
             print('Ingreso', producto.cantidad * producto.get_precio())
         elif TipoMovimiento == 'Egreso':
-            producto.cantidad -= float(Cantidad)
-            print('Productos Restantes: ', producto.cantidad)
-            print('Costo de los productos restantes: ', producto.cantidad * producto.get_precio())
+            if producto.cantidad - float(Cantidad) >= 0:
+                producto.cantidad -= float(Cantidad)
+                print('Productos Restantes: ', producto.cantidad)
+                print('Costo de los productos restantes: ', producto.cantidad * producto.get_precio())
+            else:
+                print(f'Ya no hay {producto} :(')
+                return False
         else:
-            producto.cantidad -= float(Cantidad)
+            if producto.cantidad - float(Cantidad) >= 0:
+                producto.cantidad -= float(Cantidad)
+            else:
+                print(f'Ya no hay {producto} :(')
+                return False
 
         self.guardarCSV()
+        return True
 
     def Ingreso(self):
         """
-        A function that allows you to enter the product code and description.
+        Pide los datos para actualizar y agregar cantidad a un producto ya
+        existente o crea uno nuevo si todavía no existe.
         """
+
         Historial = []
 
         print('\n****** INGRESO DE PRODUCTO ******')
@@ -169,7 +189,6 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
             else:
                 producto = Bebida(Nombre, Precio, Codigo, marca, fecha, volpeso, Cantidad)
 
-            # print(producto)
             self.ListaProducto.append(producto)
         else:
             self.ActualizarSaldo(Codigo, 'Ingreso', Cantidad)
@@ -184,13 +203,17 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
         print('')
 
     def Egreso(self):
-        # It's asking for the product code and then it's searching for the product in the list.
+        """
+        Pide los datos para actualizar y quitar cantidad a un producto ya
+        existente.
+        """
+
         Historial = []
-        print('')
-        print('****** RETIRO DE PRODUCTO ******')
+
+        print('\n****** RETIRO DE PRODUCTO ******')
         Codigo=input("Ingrese el Código del Producto: ")
         producto = self.BuscarProducto(Codigo)
-        # It's asking for the product code and then it's searching for the product in the list.
+
         if producto:
             print("Nombre del Producto: ", producto.nombre)
             print("Costo del Producto: ", producto.get_precio())
@@ -212,13 +235,15 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
             self.ListaHistorial.append(Historial)
             print('')
 
-        # It's printing a message if the product is not in the list.
         else:
-            print("¡¡Producto No existe en la base de datos!!")
+            print("¡¡El producto no existe en la base de datos!!")
 
     def Compra_Usuario(self, Codigo):
-        #aqui para poder ingresar alguna variable para la compra.
-        #se relaciona con la linea 195
+        """
+        Saca un producto del inventario para representar la compra del usuario.
+        Se guarda en el historial el movimiento
+        """
+
         producto = self.BuscarProducto(Codigo)
 
         Historial = []
@@ -232,17 +257,15 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
             Historial.append('')
             self.ListaHistorial.append(Historial)
 
-            self.ActualizarSaldo(Codigo,'Compra')
+            if self.ActualizarSaldo(Codigo,'Compra'):
+                return producto
 
-            return producto
-
-        else:
-            return None
+        return None
 
 
     def Historial(self):
         """
-        It prints the history of a product.
+        Imprime el historial de movimientos de un producto
         """
         Historial = []
         Producto = []
