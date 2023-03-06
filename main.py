@@ -31,7 +31,7 @@ while True:
             print('****** Menú Principal ******')
             print('0. Salir')
             print('1. Ingreso de productos')
-            print('2. Egredo de producto')
+            print('2. Egreso de producto')
             print('3. Historial de movimientos')
             print('4. Búsqueda de producto')
             print('5. Sacar dinero de la máquina')
@@ -49,7 +49,7 @@ while True:
                 print('')
                 print('****** BUSQUEDA DE PRODUCTO ******')
                 Codigo = input("Ingrese el Código del Producto: ")
-                maquina.inventario.BuscarProducto2(Codigo)
+                maquina.inventario.mostrarProducto(Codigo)
             elif opcion == '5':
                 maquina.sacarDinero()
             else:

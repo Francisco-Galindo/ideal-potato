@@ -49,6 +49,17 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
                     )
             return productos
 
+    def guardarCSV(self):
+        with open("Productos.csv","w") as f:
+            f.write("Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caducidad,Peso/Volumen,Cantidad\n")
+            for producto in self.ListaProducto:
+                if isinstance(producto, Botana):
+                    f.write(f"Botana,{producto.nombre},{producto.get_precio()},{producto.codigo},{producto.marca},{producto.fechacad},{producto.peso},{producto.cantidad}\n")
+                elif isinstance(producto, Bebida):
+                    f.write(f"Bebida,{producto.nombre},{producto.get_precio()},{producto.codigo},{producto.marca},{producto.fechacad},{producto.volumen},{producto.cantidad}\n")
+
+
+
 
     def BuscarNombre(self, Codigo):
         """
@@ -78,7 +89,7 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
 
         return None
 
-    def BuscarProducto2(self, Codigo):
+    def mostrarProducto(self, Codigo):
         """
         If the first element of the list is equal to the code, then print the elements of the list.
 
@@ -120,6 +131,7 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
         else:
             producto.cantidad -= float(Cantidad)
 
+        self.guardarCSV()
 
     def Ingreso(self):
         """
@@ -140,8 +152,14 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
         else:
             print("Nombre del Producto: ",Nombre)
 
-        Cantidad = float(input("Ingrese la Cantidad a ingresar del Producto: "))
-        Precio = float(input("Ingrese el Precio Unitario: "))
+        Cantidad = None
+        Precio = None
+        try:
+            Cantidad = float(input("Ingrese la Cantidad a ingresar del Producto: "))
+            Precio = float(input("Ingrese el Precio Unitario: "))
+        except ValueError:
+            print("Necesito valores numéricos...")
+            return
         Orden = input("Ingrese el Número de Orden de Compra: ")
 
         if not self.BuscarProducto(Codigo):
@@ -176,7 +194,12 @@ La estructura del archivo debe ser:  Tipo,Nombre,Precio,Codigo,Marca,Fecha_Caduc
         if producto:
             print("Nombre del Producto: ", producto.nombre)
             print("Costo del Producto: ", producto.get_precio())
-            Cantidad1 = float(input("Ingrese la Cantidad a Retirar: "))
+            Cantidad1 = None
+            try:
+                Cantidad1 = float(input("Ingrese la Cantidad a Retirar: "))
+            except ValueError:
+                print("Necesito valores numéricos...")
+                return
             Orden = input("Ingrese el Número de Factura: ")
             Historial.append("Egreso")
             Historial.append(Codigo)
