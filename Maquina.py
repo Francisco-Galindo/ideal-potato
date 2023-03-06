@@ -72,16 +72,16 @@ class Maquina():
         while self.__listaCodigos:
             codigo = self.__listaCodigos.pop()
 
-            # producto = self.inventario.obtenerProducto(codigo)
-            # print("AAA", producto)
-            producto = codigo
+            producto = self.inventario.Compra_Usuario(codigo)
+            print("AAA", producto)
+            # producto = codigo
             if producto:
                 print(f"Aquí está su {producto}")
 
                 # TODO actualizar cuando esté lista la clase Inventario
                 self.__infoTicket.append({
-                    "codigo": producto,
-                    "precio": 20
+                    "codigo": codigo,
+                    "precio": producto.get_precio()
                 })
 
             else:
@@ -127,11 +127,18 @@ class Maquina():
             codigo = codigo.strip()
             # Falta validar que haya suficientes productos
             if codigo:
-                # totalito = self.inventario.BuscarProducto().getPrecio()
-                # print("AAA", totalito)
+                producto = self.inventario.BuscarProducto(codigo)
+                if producto:
+                    precio = producto.get_precio()
 
-                self.__total += 20
-                self.__listaCodigos.append(codigo)
+                    self.__total += precio
+                    self.__listaCodigos.append(codigo)
+                else:
+                    print(f"No se encontró el producto {codigo}")
+
+        if self.__total == 0:
+            print("No has escrito ningún código válido")
+            return
 
         self.recibirPago()
         if self.__currPago >= self.__total:
@@ -159,10 +166,7 @@ class Maquina():
         else:
             return
 
-    def desatascar(self):
-        if self.__sesionIniciada:
-            print("Desatascando...")
-            if self.__atascada:
-                self.__atascada = False
-            else:
-                print("La máquina no está atascada...")
+    @property
+    def sesionIniciada(self):
+        """Getter, regresa el estado del inicio de sesión"""
+        return self.__sesionIniciada
